@@ -17,8 +17,8 @@ ext.start()
 
 def start(s):
     (idd, command) = s.packet.read('is')
-    s.is_blocked = True
     if command == "!remove":
+        s.is_blocked = True
         ext.send_to_server(HPacket('RemoveFriend', 1, idd))
 
 
